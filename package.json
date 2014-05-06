@@ -1,8 +1,8 @@
 {
-  "name": "hacknashville",
+  "name": "server-template",
   "repository" : {
     "type" : "git",
-    "url"  : "http://github.com/chyld/hacknashville.git"
+    "url"  : "https://github.com/nss-cohort-2014-04-07/server-template"
   },
   "version": "0.0.1",
   "private": true,
@@ -14,24 +14,11 @@
     "lodash":          "*",
     "moment":          "*",
     "mongodb":         "*",
-    "bcrypt":          "*",
-    "connect-redis":   "*",
     "jade":            "*",
     "express-less":    "*",
-    "request":         "*",
     "body-parser":     "*",
-    "compression":     "*",
-    "cookie-session":  "*",
     "morgan":          "*",
-    "cookie-parser":   "*",
-    "express-session": "*",
-    "serve-favicon":   "*",
-    "response-time":   "*",
-    "errorhandler":    "*",
-    "method-override": "*",
-    "connect-timeout": "*",
-    "vhost":           "*",
-    "csurf":           "*"
+    "traceur":         "*"
   },
   "devDependencies": {
     "grunt":                "*",

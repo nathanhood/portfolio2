@@ -1,9 +1,9 @@
 'use strict';
 
-var d = require('../lib/request-debug');
+var traceur = require('traceur');
 var initialized = false;
 
-module.exports = function(req, res, next){
+module.exports = (req, res, next)=>{
   if(!initialized){
     initialized = true;
     load(req.app, next);
@@ -13,9 +13,9 @@ module.exports = function(req, res, next){
 };
 
 function load(app, fn){
-  var home = require('../routes/home');
+  var home = traceur.require(__dirname + '/../routes/home.js');
 
-  app.get('/', d, home.index);
+  app.get('/', home.index);
   console.log('Routes Loaded');
   fn();
 }

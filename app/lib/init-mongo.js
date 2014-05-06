@@ -1,10 +1,10 @@
 'use strict';
 
 var MongoClient = require('mongodb').MongoClient;
-var mongoUrl = 'mongodb://localhost/' + process.env.DBNAME;
+var mongoUrl = `mongodb://localhost/${process.env.DBNAME}`;
 var initialized = false;
 
-exports.connect = function(req, res, next){
+exports.connect = (req, res, next)=>{
   if(!initialized){
     initialized = true;
     exports.db(next);
@@ -13,14 +13,12 @@ exports.connect = function(req, res, next){
   }
 };
 
-exports.db = function(fn){
-  MongoClient.connect(mongoUrl, function(err, db) {
+exports.db = fn=>{
+  MongoClient.connect(mongoUrl, (err, db)=>{
     if(err){throw err;}
     global.nss = {};
     global.nss.db = db;
-    global.nss.db.collection('artists').ensureIndex({'coordinates':'2dsphere'}, function(err, indexName){
-      console.log('Connected to MongoDB');
-      fn();
-    });
+    console.log('Connected to MongoDB');
+    fn();
   });
 };
