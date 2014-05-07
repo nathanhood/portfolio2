@@ -8,6 +8,7 @@ var express        = require('express');
 var less           = require('express-less');
 var morgan         = require('morgan');
 var bodyParser     = require('body-parser');
+var methodOverride = require('method-override');
 var initMongo      = traceur.require(__dirname + '/lib/init-mongo.js');
 var initRoutes     = traceur.require(__dirname + '/lib/init-routes.js');
 
@@ -22,6 +23,7 @@ app.use(morgan({format: 'dev'}));
 app.use(express.static(__dirname + '/static'));
 app.use('/less', less(__dirname + '/less'));
 app.use(bodyParser());
+app.use(methodOverride());
 /* --- pipeline ends   */
 
 var server = require('http').createServer(app);

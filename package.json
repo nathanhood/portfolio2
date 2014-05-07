@@ -18,6 +18,7 @@
     "express-less":    "*",
     "body-parser":     "*",
     "morgan":          "*",
+    "method-override": "*",
     "traceur":         "*"
   },
   "devDependencies": {
