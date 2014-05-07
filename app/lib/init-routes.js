@@ -16,6 +16,7 @@ function load(app, fn){
   var home = traceur.require(__dirname + '/../routes/home.js');
 
   app.get('/', home.index);
+  app.get('/help', home.help);
   console.log('Routes Loaded');
   fn();
 }
