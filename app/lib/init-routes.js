@@ -1,6 +1,7 @@
 'use strict';
 
 var traceur = require('traceur');
+var routeDebugger = traceur.require(__dirname + '/route-debugger.js');
 var initialized = false;
 
 module.exports = (req, res, next)=>{
@@ -15,6 +16,7 @@ module.exports = (req, res, next)=>{
 function load(app, fn){
   var home = traceur.require(__dirname + '/../routes/home.js');
 
+  app.all('*', routeDebugger);
   app.get('/', home.index);
   app.get('/help', home.help);
   console.log('Routes Loaded');
