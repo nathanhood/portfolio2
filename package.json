@@ -21,7 +21,10 @@
     "body-parser":     "*",
     "morgan":          "*",
     "method-override": "*",
-    "traceur":         "*"
+    "traceur":         "*",
+    "socket.io":       "*",
+    "bcrypt":          "*",
+    "cookie-session":  "*"
   },
   "devDependencies": {
     "grunt":                "*",
