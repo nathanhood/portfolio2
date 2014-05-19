@@ -24,7 +24,8 @@
     "traceur":         "*",
     "socket.io":       "*",
     "bcrypt":          "*",
-    "cookie-session":  "*"
+    "cookie-session":  "*",
+    "cookies":         "*"
   },
   "devDependencies": {
     "grunt":                "*",
