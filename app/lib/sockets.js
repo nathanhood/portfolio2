@@ -11,7 +11,7 @@ exports.connection = function(socket){
 /* -------------------------------------------------------------------------- */
 
 function addUserToSocket(socket){
-  var cookies = new Cookies(socket.handshake, {}, ['']);
+  var cookies = new Cookies(socket.handshake, {}, ['SEC123', '321CES']);
   var encoded = cookies.get('express:sess');
   var decoded;
 
