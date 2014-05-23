@@ -14,5 +14,4 @@
   function initializeSocketIo(){
     socket = io.connect('/app');
   }
-
 })();
