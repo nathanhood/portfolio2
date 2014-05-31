@@ -6,10 +6,13 @@
   },
   "version": "0.0.1",
   "private": true,
+  "bin": {"coveralls" : "./node_modules/coveralls/bin/coveralls.js"},
   "scripts":{
-    "start":   "node app/app.js;",
-    "traceur": "git clone https://github.com/google/traceur-compiler tools/traceur-compiler;cd tools/traceur-compiler;npm install;rm ../../app/static/js/vendor/traceur.js;cp bin/traceur.js ../../app/static/js/vendor;",
-    "nss":     "npm install;npm run traceur;"
+    "start"     : "node app/app.js;",
+    "traceur"   : "git clone https://github.com/google/traceur-compiler tools/traceur-compiler;cd tools/traceur-compiler;npm install;rm ../../app/static/js/vendor/traceur.js;cp bin/traceur.js ../../app/static/js/vendor;",
+    "nss"       : "npm install;npm run traceur;",
+    "test"      : "mocha --recursive test",
+    "coveralls" : "./node_modules/mocha/bin/mocha test --recursive -r blanket -R mocha-lcov-reporter | coveralls"
   },
   "dependencies": {
     "express":         "*",
@@ -31,6 +34,18 @@
     "grunt":                "*",
     "grunt-contrib-jshint": "*",
     "jshint-stylish":       "*",
-    "grunt-contrib-watch":  "*"
+    "grunt-contrib-watch":  "*",
+    "mocha":                "*",
+    "chai" :                "*",
+    "superagent":           "*",
+    "supertest":            "*",
+    "coveralls":            "*",
+    "mocha-lcov-reporter":  "*",
+    "blanket":              "*"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "/app/"
+    }
   }
 }
