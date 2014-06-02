@@ -6,7 +6,7 @@ module.exports = function(grunt){
     // ---------------------------------------------------------------------- //
     watch: {
       code: {
-        files: ['Gruntfile.js', 'app/**/*.js', '!app/static/js/vendor/**/*.js', '!app/static/js/es6/compiled/**/*.js'],
+        files: ['Gruntfile.js', 'test/**/*.js', 'app/**/*.js', '!app/static/js/vendor/**/*.js', '!app/static/js/es6/compiled/**/*.js'],
         tasks: ['jshint:all', 'traceur']
       }
     },
@@ -18,6 +18,7 @@ module.exports = function(grunt){
       },
       all: [
         'Gruntfile.js',
+        'test/**/*.js',
         'app/**/*.js',
         '!app/static/js/vendor/**/*.js',
         '!app/static/js/es6/compiled/**/*.js'
