@@ -4,16 +4,16 @@ var MongoClient = require('mongodb').MongoClient;
 var mongoUrl = `mongodb://localhost/${process.env.DBNAME}`;
 var initialized = false;
 
-exports.connect = (req, res, next)=>{
+module.exports = (req, res, next)=>{
   if(!initialized){
     initialized = true;
-    exports.db(next);
+    load(next);
   }else{
     next();
   }
 };
 
-exports.db = fn=>{
+function load(fn){
   MongoClient.connect(mongoUrl, (err, db)=>{
     if(err){throw err;}
     global.nss = {};
@@ -21,4 +21,4 @@ exports.db = fn=>{
     console.log('Connected to MongoDB');
     fn();
   });
-};
+}

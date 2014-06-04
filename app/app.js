@@ -1,6 +1,6 @@
 'use strict';
 
-var dbname = process.env.DBNAME;
+var dbname = process.env.DBNAME || 'default-db';
 var port = process.env.PORT || 4000;
 
 var traceur        = require('traceur');
@@ -19,7 +19,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
 /* --- pipeline         */
-app.use(initMongo.connect);
+app.use(initMongo);
 app.use(initRoutes);
 app.use(morgan({format: 'dev'}));
 app.use(express.static(__dirname + '/static'));
@@ -36,7 +36,7 @@ server.listen(port, function(){
 
 /* --- socket.io        */
 var sockets = traceur.require(__dirname + '/lib/sockets.js');
-var io = require('socket.io').listen(server, {log:true, 'log level':2});
+var io = require('socket.io')(server);
 io.of('/app').on('connection', sockets.connection);
 
 module.exports = app;
