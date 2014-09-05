@@ -63,14 +63,16 @@ header {
 
   a {
     color: black;
+    .transition(250ms);
   }
 
   a:hover {
-    color: @orange;
+    border-bottom: 5px solid @orange;
   }
 
   a.logo-link:hover {
     color: black;
+    border-bottom: none;
   }
 }
 
