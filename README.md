@@ -1,9 +1,8 @@
-Server Template
+Personal Portfolio
 ===============
 
 - Node.js
 - Express
-- MongoDB
 - Traceur
 - Jade
 - Less
