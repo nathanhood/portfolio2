@@ -54,6 +54,8 @@ body {
   background-image: url('/img/assets/vintage_speckles.png');
 }
 
+
+/* ==================== NAVIGATION AND HEADER ============== */
 header {
   position: absolute;
   top: 0;
@@ -71,8 +73,9 @@ header {
   }
 
   a.logo-link:hover {
-    color: black;
+    color: @orange;
     border-bottom: none;
+    .transition(200ms);
   }
 }
 
@@ -98,16 +101,23 @@ header {
   float: right;
   height: 100%;
   padding: 50px 20px 30px 20px;
-  width: 400px;
+  width: 600px;
+  text-align: right;
 
   a {
-    margin: 0 12%;
-    float: right;
+    margin: 0 5%;
     text-decoration: none;
     font-size: 1.3em;
     font-weight: bold;
   }
+
+  a.contact-link {
+    margin-right: 0;
+  }
 }
+
+
+/* ============================= HOME PAGE ================================ */
 
 .content-wrapper {
   width: 960px;
@@ -350,12 +360,6 @@ p.github-link-text {
 
 }
 
-// .left-tile-wrapper:hover {
-//   img {
-//     display: none;
-//   }
-// }
-
 .right-tile-wrapper.about-me {
   float: right;
   height: 240px;
@@ -410,9 +414,49 @@ p.github-link-text {
   clear: both;
 }
 
-footer#contact-info {
+
+/* =============================== Contact Page ======================= */
+
+.contact-info-wrapper {
+  padding-top: 30px;
   width: 100%;
-  height: 300px;
-  clear: both;
-  background-color: @dark-gray;
+  height: 100%;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  p {
+    display: block;
+  }
+}
+
+/* ================================ About Page ========================= */
+
+.about-content-wrapper {
+  max-width: 800px;
+  margin: 140px auto 0 auto;
+  padding: 20px 0 0 0;
+
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 30px auto;
+  }
+
+  p {
+    font-size: 1.2em;
+    a {
+      color: @orange;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 }

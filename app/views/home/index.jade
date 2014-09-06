@@ -57,12 +57,12 @@ block content
           p.fa.fa-github  github.com/nathanhood
       .right-tile
     .right-tile-wrapper.about-me
-      .left-tile
-        img(src='/img/assets/texture-2.png')
-      .right-tile
-        p A little more about me
+      a(href='/about')
+        .left-tile
+          img(src='/img/assets/texture-2.png')
+        .right-tile
+          p A little more about me
     .space
 
-
-  //- footer#contact-info
-  //-   p contact information
+block scripts
+  script(src='/js/es6/compiled/main.js')

@@ -1,11 +1,10 @@
-// $('html, body').hide();
+
 (function(){
   'use strict';
 
   $(document).ready(init);
 
   function init(){
-    // $('html, body').fadeIn('slow');
     initCarousel();
     $('.fa-chevron-left').click(switchBackFrame);
     $('.fa-chevron-right').click(switchForwardFrame);

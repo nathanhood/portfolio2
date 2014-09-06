@@ -22,6 +22,7 @@ app.set('view engine', 'jade');
 app.use(initMongo);
 app.use(initRoutes);
 app.use(morgan('dev', {}));
+app.use('/pdf', express.static(__dirname + '/static/pdf'));
 app.use(express.static(__dirname + '/static'));
 app.use('/less', less(__dirname + '/less'));
 app.use(bodyParser.urlencoded({

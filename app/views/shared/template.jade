@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta(charset='utf-8')
-    title= title
+    title Nathan Hood
     link(href='/less/app.css', rel='stylesheet')
     link(href='/less/normalize.css', rel='stylesheet')
     link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
@@ -14,8 +14,9 @@ html
         a.logo-link(href='/')
           h1.logo Nathan Hood
         nav#main-navigation
-          a.resume-link(href='/resume') RESUME
-          a.contact-link(href='#contact-info') CONTACT
+          a.resume-link(href='/pdf/resume.pdf') RESUME
+          a.about-link(href='/about') ABOUT
+          a.contact-link(href='/contact') CONTACT
 
     block content
 
@@ -24,6 +25,5 @@ html
     script(src='/js/vendor/moment-2.6.0.js')
     script(src='/js/vendor/traceur.js')
     script(src='/js/es5/main.js')
-    script(src='/js/es6/compiled/main.js')
 
     block scripts
