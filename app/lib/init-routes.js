@@ -19,6 +19,7 @@ function load(app, fn){
   app.get('/', dbg, home.index);
   app.get('/contact', dbg, home.contact);
   app.get('/about', dbg, home.about);
+  app.get('/projects/:projectName', dbg, home.showProject);
 
   console.log('Routes Loaded');
   fn();

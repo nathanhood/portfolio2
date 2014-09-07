@@ -22,7 +22,7 @@
 @dark-gray: #424242;
 @tan: #f3fbd5;
 @base-color: #fff;
-@orange: #ff5e2e;
+@accent-color: #ff5e2e;
 
 .transition(@duration: 1000ms) {
   -webkit-transition: all @duration ease;
@@ -60,7 +60,7 @@ header {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 140px;
+  height: 120px;
   background-color: @base-color;
 
   a {
@@ -69,11 +69,11 @@ header {
   }
 
   a:hover {
-    border-bottom: 5px solid @orange;
+    border-bottom: 5px solid @accent-color;
   }
 
   a.logo-link:hover {
-    color: @orange;
+    color: @accent-color;
     border-bottom: none;
     .transition(200ms);
   }
@@ -116,12 +116,57 @@ header {
   }
 }
 
+@media screen and (min-width: 650px) and (max-width: 900px) {
+  .logo-link {
+    margin-top: 23px;
 
-/* ============================= HOME PAGE ================================ */
+    .logo {
+      font-size: 2.3em;
+    }
+  }
+
+  #main-navigation {
+    width: 400px;
+
+    a {
+      font-size: 1.1em;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  header {
+    height: 140px;
+  }
+
+  .logo-link {
+    display: block;
+    float: none;
+    text-align: center;
+
+    .logo {
+      font-size: 1.9em;
+    }
+  }
+
+  #main-navigation {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    text-align: center;
+
+    a {
+      font-size: 1em;
+    }
+  }
+}
+
+
+/* ============================= Home Page ================================ */
 
 .content-wrapper {
   width: 960px;
-  margin: 140px auto 0 auto;
+  margin: 120px auto 0 auto;
 
   .carousel-wrapper {
     width: 100%;
@@ -153,19 +198,49 @@ header {
   }
 }
 
+#portrait-tile {
+  float: right;
+  height: 240px;
+  width: 240px;
+  background-image: url('/img/assets/bw-portrait.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+#headline-content {
+  float: left;
+  height: 240px;
+  width: 75%;
+  background-image: url('/img/assets/dirty-old-black-shirt.png');
+  background-color: @another-blue;
+  text-align: center;
+  padding: 20px 20px;
+  p {
+    font-size: 1.45em;
+    letter-spacing: .02em;
+    width: 70%;
+    margin: 20px auto 0 auto;
+    font-family: 'futura-pt';
+    color: @base-color;
+  }
+}
+
+.project-tile {
+  display: none;
+}
+
+// ========== Carousel
+
 .left-slide-content.one {
   .carousel-image('/img/assets/projects/nashploration.jpg');
-  // .transition;
 }
 
 .left-slide-content.two {
   .carousel-image('/img/assets/projects/muse-collective.jpg');
-  // .transition;
 }
 
 .left-slide-content.three {
   .carousel-image('/img/assets/projects/checkers.jpg');
-  // .transition;
 }
 
 .right-slide-content {
@@ -183,52 +258,6 @@ header {
   .carousel-content.one, .carousel-content.one, .carousel-content.one {
     .transition;
   }
-}
-
-.right-slide-content.three {
-  margin: 30px 0;
-}
-
-.link-container {
-  height: 35px;
-  width: 100%;
-  text-align: center;
-  padding: 0 60px;
-}
-
-.learn-more-link, .github-link, .application-link {
-  color: white;
-  text-decoration: none;
-}
-
-.github-link {
-  float: left;
-}
-
-.learn-more-link {
-  float: right;
-}
-
-.application-link {
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-  padding: 0 15px;
-  margin: 0 15px;
-}
-
-.learn-more-link, .application-link {
-  font-size: 1.1em;
-}
-
-p.github-link-text {
-  display: inline;
-  color: white;
-  margin-left: 5px;
-  font-family: @main-font;
-}
-
-.learn-more-link:hover, .github-link:hover, p.github-link-text:hover, .application-link:hover {
-  color: @orange;
 }
 
 #carousel-nav {
@@ -279,38 +308,53 @@ p.github-link-text {
     }
 
     .active {
-      background-color: @orange;
+      background-color: @accent-color;
     }
   }
 }
 
 
-#portrait-tile {
-  float: right;
-  height: 240px;
-  width: 25%;
-  background-image: url('/img/assets/bw-portrait.jpg');
-  background-position: center;
-  background-size: cover;
+.right-slide-content.three {
+  margin: 30px 0;
 }
 
-#headline-content {
-  float: left;
-  height: 240px;
-  width: 75%;
-  background-image: url('/img/assets/dirty-old-black-shirt.png');
-  background-color: @another-blue;
+.link-container {
+  height: 35px;
+  width: 100%;
   text-align: center;
-  padding: 20px 20px;
-  p {
-    font-size: 1.45em;
-    letter-spacing: .02em;
-    width: 70%;
-    margin: 20px auto 0 auto;
-    font-family: 'futura-pt';
-    color: @base-color;
-  }
+  padding: 0 60px;
 }
+
+.learn-more-link, .github-link, .application-link {
+  color: white;
+  text-decoration: none;
+}
+
+.github-link {
+  float: left;
+}
+
+.learn-more-link {
+  float: right;
+}
+
+.application-link {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  padding: 0 15px;
+  margin: 0 15px;
+}
+
+.learn-more-link, .application-link {
+  font-size: 1.1em;
+}
+
+.learn-more-link:hover, .github-link:hover, p.github-link-text:hover, .application-link:hover {
+  color: @accent-color;
+}
+
+
+
 
 .left-tile-wrapper.contact {
   float: left;
@@ -322,7 +366,6 @@ p.github-link-text {
     height: 100%;
     float: left;
     background-color: @base-color;
-    // padding: 140px 0 0 25px;
 
     .nashville-image-wrapper {
       width: 100%;
@@ -350,14 +393,12 @@ p.github-link-text {
     height: 100%;
     float: right;
     background-image: url('/img/assets/green-dust-and-scratches.png');
-    background-color: saturate(@orange, -10%);
+    background-color: saturate(@accent-color, -10%);
     img {
       width: 100%;
       height: 100%;
     }
   }
-
-
 }
 
 .right-tile-wrapper.about-me {
@@ -369,7 +410,7 @@ p.github-link-text {
     width: 50%;
     height: 100%;
     float: left;
-    background-image: url('/img/assets/portrait.jpg');
+    background-image: url('/img/assets/bw-portrait2.jpg');
     background-size: cover;
     background-position: center;
   }
@@ -415,6 +456,265 @@ p.github-link-text {
 }
 
 
+@media screen and (min-width: 660px) and (max-width: 960px) {
+  .content-wrapper {
+    width: 660px;
+
+    .carousel-wrapper {
+      height: 330px;
+    }
+  }
+
+  #portrait-tile {
+    width: 170px;
+    height: 170px;
+  }
+
+  #headline-content {
+    width: 490px;
+    height: 170px;
+    padding: 0 10px;
+
+    p {
+      font-size: 1.2em;
+      width: 85%;
+    }
+  }
+
+  #carousel-nav {
+    margin-top: 10px;
+    right: 90px;
+  }
+
+  .right-slide-content {
+    padding: 4em 4em 2em 4em;
+
+    .carousel-description {
+      font-size: 1.5em;
+    }
+  }
+
+  .link-container {
+    padding: 0 15px;
+  }
+
+  .learn-more-link, .github-link, .application-link {
+    font-size: .8em;
+  }
+
+  .learn-more-link {
+    margin-top: 3px;
+  }
+
+  .application-link {
+    padding: 0 10px;
+    margin: 0 7px;
+  }
+
+  a.github-link {
+    font-size: 1.5em;
+  }
+
+  .left-tile-wrapper.contact, .right-tile-wrapper.about-me {
+    height: 165px;
+  }
+
+  .right-tile-wrapper.about-me {
+
+    .right-tile {
+      p {
+        font-size: 1.3em;
+      }
+    }
+
+    .left-tile img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .left-tile-wrapper.contact {
+    .left-tile {
+
+      .contact-wrapper {
+        padding-left: 15px;
+        padding-top: 5px;
+
+        p {
+          font-size: .75em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #portrait-tile {
+    display: none;
+  }
+
+  .content-wrapper {
+    max-width: 660px;
+    width: 100%;
+
+    .carousel-wrapper {
+      height: 330px;
+    }
+  }
+
+  #headline-content {
+    width: 320px;
+    height: 190px;
+    padding: 15px 0;
+    margin: 0 auto;
+    float: none;
+
+    p {
+      font-size: 1em;
+      width: 90%;
+    }
+  }
+
+  .carousel-wrapper {
+    display: none;
+  }
+
+  .project-tile {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    // background-image: url('/img/assets/green-dust-and-scratches.png');
+    // background-color: #1f1f1f;
+    // text-align: center;
+
+    // p {
+    //   margin: 30px auto;
+    //   color: white;
+    //   width: 90%;
+    //   font-size: 1.6em;
+    // }
+    //
+    // p.description {
+    //   margin-bottom: 15px;
+    // }
+    //
+    // p.link {
+    //   font-size: .9em;
+    //   color: @accent-color;
+    //   margin-top: 15px;
+    // }
+    //
+    // .left-tile, .right-tile {
+    //   width: 50%;
+    //   height: 100%;
+    //   display: inline-block;
+    // }
+    //
+    // .left-tile {
+    //   float: left;
+    //   img {
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    // }
+    // .right-tile {
+    //   float: right;
+    //   img {
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    // }
+
+    // .project-tile:hover {
+    //   img {
+    //     display: none;
+    //   }
+    // }
+  }
+
+  .project-tile.nashploration {
+    background-image: url('/img/assets/projects/nashploration.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  // .project-tile.nashploration .right-tile {
+  //   p.description {
+  //     margin-top: 40px;
+  //   }
+  // }
+
+  .project-tile.muse-collective {
+    background-image: url('/img/assets/projects/muse-collective.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .project-tile.checkers {
+    background-image: url('/img/assets/projects/checkers.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .left-tile-wrapper.contact, .right-tile-wrapper.about-me {
+    height: 160px;
+    width: 320px;
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .right-tile-wrapper.about-me {
+
+    .right-tile {
+      p {
+        font-size: 1.3em;
+      }
+    }
+
+    .left-tile img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .left-tile-wrapper.contact {
+    .left-tile {
+
+      .contact-wrapper {
+        padding-left: 10px;
+        padding-top: 5px;
+
+        p {
+          font-size: .75em;
+        }
+      }
+    }
+  }
+  .space {
+    display: none;
+  }
+}
+
+// @media screen and (max-width: 460px) {
+//   #headline-content {
+//     p {
+//       font-size: 1em;
+//       width: 95%;
+//     }
+//   }
+// }
+
+@media screen and (max-width: 385px) {
+  #headline-content {
+    height: 190px;
+    padding-top: 15px;
+  }
+}
+
+
 /* =============================== Contact Page ======================= */
 
 .contact-info-wrapper {
@@ -432,11 +732,12 @@ p.github-link-text {
   }
 }
 
+
 /* ================================ About Page ========================= */
 
 .about-content-wrapper {
   max-width: 800px;
-  margin: 140px auto 0 auto;
+  margin: 120px auto 0 auto;
   padding: 20px 0 0 0;
 
 
@@ -450,13 +751,145 @@ p.github-link-text {
 
   p {
     font-size: 1.2em;
+    line-height: 1.4em;
+
     a {
-      color: @orange;
+      color: @accent-color;
       text-decoration: none;
     }
 
     a:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 960px) {
+  .about-content-wrapper {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about-content-wrapper {
+    margin-top: 140px;
+    width: 80%;
+
+    p {
+      font-size: .9em;
+    }
+  }
+}
+
+/* ============================== Project Page ========================== */
+
+.project-wrapper {
+  max-width: 800px;
+  margin: 120px auto 0 auto;
+  padding: 40px 0 30px 0;
+
+  .image-container {
+    width: 30%;
+    display: inline-block;
+    float: left;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .content-container {
+    width: 65%;
+    height: 100%;
+    display: inline-block;
+    float: right;
+    margin-left: 5%;
+
+    h2.project-title {
+      font-size: 2em;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.4em;
+    }
+
+    ul.technologies {
+      margin-top: 0;
+    }
+
+    p.technologies-title {
+      margin-bottom: 5px;
+    }
+  }
+
+  .link-container {
+    text-align: left;
+    padding: 0;
+  }
+
+  .github-link, .application-link {
+    color: black;
+    font-size: 1em;
+  }
+
+  .application-link {
+    border-left: 1px solid black;
+    border-right: none;
+  }
+
+  .github-link:hover, .application-link:hover {
+    color: @accent-color;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .project-wrapper {
+    width: 80%;
+    margin: 140px auto 0 auto;
+
+    .image-container {
+      display: block;
+      width: 100%;
+      img {
+        max-width: 200px;
+        height: auto;
+      }
+    }
+
+    .content-container {
+      width: 100%;
+
+      p {
+        font-size: 1em;
+        line-height: 1.4em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .project-wrapper {
+
+    .image-container {
+      img {
+        max-width: 150px;
+        height: auto;
+      }
+    }
+
+    .content-container {
+      h2.project-title {
+        margin-top: 5px;
+        font-size: 1.6em;
+      }
+
+      .link-container {
+        height: 25px;
+      }
     }
   }
 }

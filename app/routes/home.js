@@ -12,3 +12,7 @@ exports.contact = (req, res)=>{
 exports.about = (req, res)=>{
   res.render('home/about');
 };
+
+exports.showProject = (req, res)=>{
+  res.render(`projects/${req.params.projectName}`);
+};

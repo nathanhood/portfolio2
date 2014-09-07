@@ -1,0 +1,32 @@
+extends ../shared/template
+
+block content
+  .project-wrapper
+    .image-container
+      img(src='/img/assets/projects/muse-collective.jpg')
+    .content-container
+      h2.project-title Muse Collective
+      .link-container
+        a.github-link(href='https://github.com/nathanhood/muse-collective') View Source Code
+        a.application-link(href='http://musecollective.nathanhood.me') View Site
+      p.project-description
+        | This was my capstone project for the first half course at Nashville Software School.
+        | We covered topics such as building dynamic websites with Node.js and Express middleware
+        | along with front end Javascript, JQuery and HTML/CSS.
+        | Muse Collective is a tool for songwriters and other creative writers.
+        | Visit the site, create an account and play around with the different
+        | tools that I built. Maybe you will create something you didn't even
+        | know you had in you.
+
+      p.project-contribution-title
+        | <b>Contribution:</b> I am the sole contributor to this project.
+
+      p.technologies-title <b>Technologies Used:</b>
+      ul.technologies
+        li Express (Node.js)
+        li MongoDB
+        li Jade
+        li Mailgun
+        li JQuery
+        li JQuery UI
+        li AJAX

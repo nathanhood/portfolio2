@@ -3,7 +3,7 @@ extends ../shared/template
 block content
   .content-wrapper
     #headline-content
-      p I am a junior web developer fresh out of Nashville Software School. I am excited to contribute my new-found skills with a great company, and to learn as much as I can along the way. Check out what I've done so far.
+      p I am a junior web developer fresh out of Nashville Software School. I am excited to contribute my new-found skills with a great company, and to learn as much as I can along the way. Check out what I have accomplished so far.
     #portrait-tile
 
     .carousel-wrapper
@@ -24,7 +24,7 @@ block content
               .link-container
                 a.github-link.fa.fa-github.fa-2x(href='https://github.com/nathanhood/nashploration')
                 a.application-link(href='#') View Site
-                a.learn-more-link(href='#') Learn More
+                a.learn-more-link(href='/projects/nashploration') Learn More
       .carousel.two(hidden)
         .left-slide
           .left-slide-content.two
@@ -35,7 +35,7 @@ block content
               .link-container
                 a.github-link.fa.fa-github.fa-2x(href='https://github.com/nathanhood/muse-collective')
                 a.application-link(href='http://musecollective.nathanhood.me') View Site
-                a.learn-more-link(href='#') Learn More
+                a.learn-more-link(href='/projects/musecollective') Learn More
       .carousel.three(hidden)
         .left-slide
           .left-slide-content.three
@@ -46,8 +46,19 @@ block content
               .link-container
                 a.github-link.fa.fa-github.fa-2x(href='https://github.com/nathanhood/checkers')
                 a.application-link(href='http://checkers.nathanhood.me') View Site
-                a.learn-more-link(href='#') Learn More
+                a.learn-more-link(href='/projects/checkers') Learn More
 
+
+    a.project-tile.nashploration(href='/projects/nashploration')
+    a.project-tile.muse-collective(href='/projects/musecollective')
+    a.project-tile.checkers(href='/projects/checkers')
+
+    .right-tile-wrapper.about-me
+      a(href='/about')
+        .left-tile
+          img(src='/img/assets/texture-2.png')
+        .right-tile
+          p A little more about me
     .left-tile-wrapper.contact
       .left-tile
         .nashville-image-wrapper
@@ -56,12 +67,6 @@ block content
           p.fa.fa-envelope-o  nathanhood@me.com
           p.fa.fa-github  github.com/nathanhood
       .right-tile
-    .right-tile-wrapper.about-me
-      a(href='/about')
-        .left-tile
-          img(src='/img/assets/texture-2.png')
-        .right-tile
-          p A little more about me
     .space
 
 block scripts

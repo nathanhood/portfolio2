@@ -1,0 +1,28 @@
+extends ../shared/template
+
+block content
+  .project-wrapper
+    .image-container
+      img(src='/img/assets/projects/checkers.jpg')
+    .content-container
+      h2.project-title Checkers
+      .link-container
+        a.github-link(href='https://github.com/nathanhood/checkers') View Source Code
+        a.application-link(href='http://checkers.nathanhood.me') View Site
+      p.project-description
+        | This was a fun little project toward the beginning of my time at
+        | NSS. I mainly included this because I enjoyed the learning process
+        | as well as the theme. I hope you have as much fun playing it as I had
+        | making it.
+      p.project-description Side Note: The Beatles go first
+
+      p.project-contribution-title
+        | <b>Contribution:</b> This was an in-class project. I am responsible for the
+        | code in this project while collaborating with other students about general logic
+        | challenges that this game brought with it.
+
+      p.technologies-title <b>Technologies Used:</b>
+      ul.technologies
+        li Jade
+        li JQuery
+        li LESS

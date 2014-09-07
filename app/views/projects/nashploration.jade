@@ -1,0 +1,41 @@
+extends ../shared/template
+
+block content
+  .project-wrapper
+    .image-container
+      img(src='/img/assets/projects/nashploration.jpg')
+    .content-container
+      h2.project-title Nashploration
+      .link-container
+        a.github-link(href='https://github.com/nathanhood/nashploration') View Source Code
+        a.application-link(href='http://nashploration.nathanhood.me') View Site
+      p.project-description
+        | A local Nashville teacher came to 2014's Hack4Change
+        | event with the idea for an application to help engage school children with
+        | local history and social studies. I was lucky enough to be a part of the
+        | original team that began the project over the hack-a-thon weekend. We landed
+        | a first place prize at the end of that event with aspirations to make it
+        | a tangible product that could be used for Nashville's public school system.
+      p.project-description
+        | In order to make this aspiration a reality, I, along
+        | with three other students from NSS, completely rebuilt the application into
+        | what you see now. Currently, we are working alongside the Nashville Civic
+        | Brigade and the City of Nashville to open-source Nashploration and put it
+        | into production.
+
+      p.project-contribution-title
+        | <b>Contribution:</b> I contributed to nearly every facet of this project, from
+        | the schema and models to the controllers and routing to the front-end Javascript to
+        | CSS.
+
+      p.technologies-title <b>Technologies Used:</b>
+      ul.technologies
+        li Express (Node.js)
+        li MongoDB
+        li Jade
+        li Google Maps API
+        li Mailgun
+        li MediaWiki API
+        li JQuery
+        li LESS
+        li AJAX
